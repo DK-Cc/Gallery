@@ -17,11 +17,13 @@ import java.util.List;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
 
+    private Context mContext;
     private LayoutInflater mInflater;
     private List<GalleryItem> mGalleryItems;
 
     public GalleryAdapter(Context context, List<GalleryItem> galleryItems) {
 
+        mContext = context;
         mInflater = LayoutInflater.from(context);
         mGalleryItems = galleryItems;
     }
@@ -36,8 +38,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
 
     @Override
     public void onBindViewHolder(GalleryHolder holder, int position) {
-
-
+        holder.bindDrawable(mContext.getResources().getDrawable(R.mipmap.loading_img));
 
     }
 

@@ -26,6 +26,4 @@ public class GalleryHolder extends RecyclerView.ViewHolder {
         mItemImageView.setImageDrawable(drawable);
     }
 
-
-
 }

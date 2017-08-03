@@ -20,8 +20,21 @@ public class PictureUtils {
 
         int inSampleSize = 1;
         if (srcHeight > destHeight || srcWidth > destWidth) {
-            float heightScale = srcHeight / destHeight;
-            float widthScale = srcWidth / destWidth;
+
+            float heightScale = 0;
+            float widthScale = 0;
+
+            if (destHeight == 0 && destWidth == 0) {
+                return null;
+            } else if (destHeight == 0) {
+                widthScale = srcWidth / destWidth;
+            } else if (destWidth == 0) {
+                heightScale = srcHeight / destHeight;
+
+            } else {
+                heightScale = srcHeight / destHeight;
+                widthScale = srcWidth / destWidth;
+            }
 
             inSampleSize = Math.round(heightScale > widthScale ? heightScale : widthScale);
         }

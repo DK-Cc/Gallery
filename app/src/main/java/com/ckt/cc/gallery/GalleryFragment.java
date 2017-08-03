@@ -122,6 +122,12 @@ public class GalleryFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        mPhotosGetHandlerThread.clearQueue();
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPhotosGetHandlerThread.quit();
     }
 }

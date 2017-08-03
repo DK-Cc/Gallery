@@ -21,6 +21,8 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
     private LayoutInflater mInflater;
     private List<GalleryItem> mGalleryItems;
 
+    private QueuePhotosGet mQueuePhotosGet;
+
     public GalleryAdapter(Context context, List<GalleryItem> galleryItems) {
 
         mContext = context;
@@ -39,10 +41,23 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
     @Override
     public void onBindViewHolder(GalleryHolder holder, int position) {
         holder.bindDrawable(mContext.getResources().getDrawable(R.mipmap.loading_img));
+
+        mQueuePhotosGet.onQueuePhotosGet(holder,mGalleryItems.get(position).getLogo());
     }
 
     @Override
     public int getItemCount() {
         return mGalleryItems.size();
     }
+
+
+    public interface QueuePhotosGet {
+        void onQueuePhotosGet(GalleryHolder holder,String url);
+        void onQueuePhotosGet(GalleryHolder holder,String url,int destWidth, int destHeight);
+    }
+
+    public void setQueuePhotosGet(QueuePhotosGet queuePhotosGet) {
+        mQueuePhotosGet = queuePhotosGet;
+    }
+
 }

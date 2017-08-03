@@ -23,7 +23,7 @@ public class GalleryHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindDrawable(Drawable drawable) {
-        mItemImageView.setImageDrawable(drawable);
+        mItemImageView.setBackground(drawable);
     }
 
 }

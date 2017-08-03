@@ -27,7 +27,7 @@ import android.graphics.BitmapFactory;
  * 获取http请求的工具类
  */
 
-public class HttpUtil {
+public class HttpUtils {
 
     /**
      * 通过HttpURLConnection获得字符串数据

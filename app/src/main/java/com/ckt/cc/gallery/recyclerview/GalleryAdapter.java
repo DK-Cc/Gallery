@@ -39,7 +39,6 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
     @Override
     public void onBindViewHolder(GalleryHolder holder, int position) {
         holder.bindDrawable(mContext.getResources().getDrawable(R.mipmap.loading_img));
-
     }
 
     @Override

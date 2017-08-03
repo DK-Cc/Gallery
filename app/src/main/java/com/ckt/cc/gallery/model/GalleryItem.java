@@ -6,34 +6,47 @@ package com.ckt.cc.gallery.model;
 
 public class GalleryItem {
 
-    public static final String URL = "http://218.244.149.129:9010/api/companylist" +
+    public static final String URL = "http://218.244.149.129:9010/api/companylist" + "" + "" +
             ".php?industryid=102";
 
-    private String company;
-    private String summary;
-    private String logo;
+    private String mId;
+    private String mCompany;
+    private String mSummary;
+    private String mLogo;
+
+    public String getId() {
+        return mId;
+    }
+
+    public void setId(String id) {
+        mId = id;
+    }
 
     public String getCompany() {
-        return company;
+        return mCompany;
     }
 
     public void setCompany(String company) {
-        this.company = company;
+        mCompany = company;
     }
 
     public String getSummary() {
-        return summary;
+        return mSummary;
     }
 
     public void setSummary(String summary) {
-        this.summary = summary;
+        mSummary = summary;
     }
 
     public String getLogo() {
-        return logo;
+        return mLogo;
     }
 
     public void setLogo(String logo) {
-        this.logo = logo;
+        mLogo = logo;
+    }
+
+    public String getPhotoFileName() {
+        return "IMG_" + getId() + ".jpg";
     }
 }
